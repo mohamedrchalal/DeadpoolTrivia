@@ -67,8 +67,8 @@ function startGame(){
     if (this.innerHTML == deadpoolTrivia.correctAnswers[i]){
       score++;
       console.log(score,i)
-      totalScore = (score*10000000)/time;
     }
+    totalScore = (score*10000000)/time;
     i=i+1;
     populateQuestionAnswers();
     document.getElementById('score').innerHTML = totalScore;
