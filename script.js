@@ -68,7 +68,7 @@ function startGame(){
       score++;
       console.log(score,i)
     }
-    totalScore = (score*10000000)/time;
+    totalScore = Math.floor((score*10000000)/time);
     i=i+1;
     populateQuestionAnswers();
     document.getElementById('score').innerHTML = totalScore;
