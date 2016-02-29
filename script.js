@@ -1,4 +1,10 @@
 function startGame(){
+  // NHO: like how you structured your data here, maybe a simpler implementation might be an array of question objects
+  // i.e.: deadpoolTrivia = [
+  //   { question: "What character...?", answerA: "a. Superman", answerB: "b. Batman", correctAnswer: "d. deathstroke"}
+  //   { question: "What is deadpools...?", answerA: "a. Guy", answerB: "b. Wade", correctAnswer: "d. Wade Wilson"}
+  // ]
+  // definitely up to personal preference
   deadpoolTrivia = {
     questions: [
       'What DC comics character is Deadpool similar to?',
@@ -34,6 +40,7 @@ function startGame(){
     'd. a bet','d. omnisexual','d. francis',
     'd. fourth wall','d. Canada'],
   };
+  // NHO: Like how your code is organized! Looks like it would be easy to refactor into a global object!
   score = 0;
   totalScore = 0;
   time = 0;
@@ -64,15 +71,16 @@ function startGame(){
   };
 
   nextQuestion = function(){
+    // NHO: This function seems to being doing a lot, recommend breaking into smaller functions that are called in this function
     if (this.innerHTML == deadpoolTrivia.correctAnswers[i]){
       score++;
       console.log(score,i)
     }
-    totalScore = Math.floor((score*10000000)/time);
+    totalScore = Math.floor((score*10000000)/time); // NHO: I like this feature, very creative!
     i=i+1;
     populateQuestionAnswers();
     document.getElementById('score').innerHTML = totalScore;
-    saveScore()
+    saveScore() // NHO: feel like you want to move this function call down into the check below. i.e after the game is over
     if (i>=deadpoolTrivia.questions.length){
       console.log(score,i);
       clearInterval(startTimer)
@@ -81,16 +89,25 @@ function startGame(){
     }
   }
 
-function saveScore(){
-  var scoreValue = totalScore;
-  localStorage.setItem('text', scoreValue)
-}
+  function saveScore(){
+    var scoreValue = totalScore;
+    localStorage.setItem('text', scoreValue)
+    // NHO: awesome job looking into localStorage - would love to see you use this to implement a leaderboard feature in the future!
+  }
 
   eventListening = function(){
-    for (j=0;j<document.querySelectorAll('.answers').length;j++){
+    // NHO: would recommend moving `document.querySelectorAll('.answers')` into a variable to avoid repeating this long chain
+    for (var j = 0; j < document.querySelectorAll('.answers').length; j++){
       document.querySelectorAll('.answers')[j].addEventListener('click',nextQuestion);
     }
   }
 }
 startGame();
 eventListening();
+
+// NHO: overall, good, well organized, clean code!
+  // some things to consider in the future:
+    // avoid global variables where possible
+    // use input and output with functions to avoid accessing variables outside local scope
+    // Object Oriented approach
+// nice job on this project!
