@@ -7,8 +7,8 @@
 </head>
 <body>
   <h1 id="questions">questions</h1>
-  <h2 id="scoreTag">Score:<span id="score"></span></h2>
-  <h3 id="scoreTag">Time:<span id="time">time</span></h3>
+  <h2 id="scoreTag">Score:<span id="score"></span></h2> <!-- NHO: html will not validate because you have duplicate ids: "scoreTag" -->
+  <h3 id="scoreTag">Time:<span id="time">time</span></h3> <!-- Best practice is to have unique id attributes, you could make it a class... -->
   <button id="answerA" class='answers'>answerA</button>
   <button id="answerB" class='answers'>answerB</button>
   <button id="answerC" class='answers'>answerC</button>
@@ -16,3 +16,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+<!-- NHO: good, clean, semantic Markup!  -->

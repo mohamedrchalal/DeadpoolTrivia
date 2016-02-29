@@ -1,3 +1,4 @@
+/* NHO: loved the overall theme and design! */
 body {
   position: absolute;
   top: 100px;
@@ -9,6 +10,7 @@ body {
   margin: 0 auto;
   margin-top: 90px;
   background-image: url('http://hdwallpapersd.com/wp-content/uploads/2015/10/arrow-through-the-head-deadpool-high-resolution-wallpaper.jpeg');
+  /* NHO: would recommend downloading the asset and linking to it yourself to avoid future 404 errors...*/
   background-size: cover;
   background-color: #000;
   font-family: monospace;
@@ -47,13 +49,14 @@ h3 {
   font-family: monospace;
   font-size: 15px;
   font-weight: bolder;
-  margin: 20px,20px,20px,20px;
+  margin: 20px 20px 20px 20px; /* NHO: no commas necessary here */
   max-width: 250px;
 }
 button {
   position: relative;
   border: 10px solid white;
   background-image: url('http://dzasv7x7a867v.cloudfront.net/product_photos/27084959/deadpool_original.png');
+  /* NHO: would recommend downloading the asset and linking to it yourself to avoid future 404 errors...*/
   background-size: cover;
   left: 0px;
   float: left;
@@ -61,3 +64,4 @@ button {
   height: 100px;
   margin: 20px;
 }
+/* NHO: while definitely not a project requirement, would look into media queries as a way to make your page responsive depending on screen size */
