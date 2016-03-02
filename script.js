@@ -34,10 +34,10 @@ function startGame(){
     'd. a bet','d. omnisexual','d. francis',
     'd. fourth wall','d. Canada'],
   };
-  score = 0;
-  totalScore = 0;
-  time = 0;
-  i = 0;
+  var score = 0;
+  var totalScore = 0;
+  var time = 0;
+  var i = 0;
   var questions = document.getElementById('questions');
   var answerA = document.getElementById('answerA');
   var answerB = document.getElementById('answerB');
